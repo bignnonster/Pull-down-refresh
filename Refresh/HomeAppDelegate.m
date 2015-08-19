@@ -11,11 +11,13 @@
 #import "HomeViewController.h"
 
 @implementation HomeAppDelegate
+@synthesize window;
+@synthesize viewController;
 
 - (void)dealloc
 {
-    [_window release];
-    [_viewController release];
+    [window release];
+    [viewController release];
     [super dealloc];
 }
 

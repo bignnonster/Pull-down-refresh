@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EGORefreshTableHeaderView.h"
 
-@interface HomeViewController : UIViewController
-
+@interface HomeViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,
+EGORefreshTableHeaderDelegate>
+{
+    BOOL isflage;
+    IBOutlet UITableView* myTableView;
+    EGORefreshTableHeaderView* _refreshHeaderView;
+    BOOL _reloading;
+}
+@property(nonatomic,retain)UITableView* myTableView;
+- (void)reloadTableViewDataSource;
+- (void)doneLoadingTableViewData;
 @end
